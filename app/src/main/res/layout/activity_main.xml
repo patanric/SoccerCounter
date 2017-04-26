@@ -204,7 +204,7 @@
             android:textSize="52sp"
             android:layout_gravity="center_horizontal"
             android:textColor="#e0e0e0"
-            tools:text="00"/>
+            tools:text="00:00:00"/>
 
         <Button
             android:id="@+id/resetButton"
