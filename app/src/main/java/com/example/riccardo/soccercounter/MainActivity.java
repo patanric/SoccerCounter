@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -18,18 +17,17 @@ import java.util.concurrent.TimeUnit;
 public class MainActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
-
+    private static final String FORMAT = "%02d:%02d:%02d";
     int scoreTeamA = 0;
     int scoreTeamB = 0;
     int foulTeamA = 0;
     int foulTeamB = 0;
-    private TextView mTimer;
     CountDownTimer countDownTimer;
+    private TextView mTimer;
     private Button mGoalA;
     private Button mGoalB;
     private Button mFoulA;
     private Button mFoulB;
-    private static final String FORMAT = "%02d:%02d:%02d";
     private String time;
 
     @Override
@@ -57,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!"".equals(input.getText().toString())) {
                     time = input.getText().toString();
                 } else time = "10";
-                countDownTimer = new CountDownTimer((Long.parseLong(time)*1000) +1000, 1000) {
+                countDownTimer = new CountDownTimer((Long.parseLong(time) * 1000) + 1000, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
                         mTimer.setText("" + String.format(FORMAT, TimeUnit.MILLISECONDS.toHours(millisUntilFinished),

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,11 +14,12 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="@string/backgroud_image"
             android:scaleType="centerCrop"
-            android:src="@drawable/soccer"
-            android:contentDescription="@string/backgroud_image" />
+            android:src="@drawable/soccer" />
 
         <LinearLayout
+            android:id="@+id/lin_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -58,9 +58,9 @@
                     android:fontFamily="sans-serif-light"
                     android:gravity="center_horizontal"
                     android:text="@string/goals"
-                    android:textStyle="bold"
                     android:textColor="#000000"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/goalA"
@@ -100,8 +100,8 @@
                     android:gravity="center_horizontal"
                     android:text="@string/fouls"
                     android:textColor="#e0e0e0"
-                    android:textStyle="bold"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <View
@@ -142,9 +142,9 @@
                     android:fontFamily="sans-serif-light"
                     android:gravity="center_horizontal"
                     android:text="@string/goals"
-                    android:textStyle="bold"
                     android:textColor="#000000"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/goalB"
@@ -183,36 +183,38 @@
                     android:fontFamily="sans-serif-light"
                     android:gravity="center_horizontal"
                     android:text="@string/fouls"
-                    android:textStyle="bold"
                     android:textColor="#e0e0e0"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/timerTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="52sp"
-            android:layout_gravity="center_horizontal"
-            android:textColor="#e0e0e0"
-            tools:text="00:00:00"/>
+            <TextView
+                android:id="@+id/timerTextView"
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#e0e0e0"
+                android:textSize="52sp"
+                tools:text="00:00:00" />
 
-        <Button
-            android:id="@+id/resetButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:onClick="restartAll"
-            android:text="@string/restart" />
+            <Button
+                android:id="@+id/resetButton"
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="restartAll"
+                android:text="@string/restart" />
         </LinearLayout>
 
     </RelativeLayout>
